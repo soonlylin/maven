@@ -1,14 +1,20 @@
 hello world 2019-08-28 1626 soonly script
 
-sad
-f
-asd
-fa
-df
-as
-df
-a
-sdf
-as
-df
-sd
+Jenkins 可以在构建中执行shell命令或者windows的batch 命令。
+
+1. 选择一个项目，点击“配置”。
+
+2. 找到“构建” –> “增加构建步骤”。选择 “Execute shell” 或者 “Execute Windows batch command”。
+
+具体选择哪一个取决于你的执行环境，如果是linux环境，选择 “Execute shell”。如果是windows环境，选择 “Execute Windows batch command”。我这边选择的是“Execute Windows batch command”。
+
+3. 在 “命令”栏中输入你要执行的命令。
+
+echo "Hello World"
+echo %BUILD_TAG%
+python hello_python.py
+备注：
+
+在命令栏下方，可以看到“参阅可用环境变量列表”。点击之后，可以看到所有可以用的变量名列表及其解释。
+
+比如上面我们使用的 BUILD_TAG。
